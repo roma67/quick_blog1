@@ -17,3 +17,7 @@
 /tmp
 
 
+.idea
+.secret
+.config/database.yml
+.config/secrets.yml
