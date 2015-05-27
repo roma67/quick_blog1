@@ -45,6 +45,11 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+
+group :test do
+  gem 'capybara'
+end
+
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 gem 'foundation-rails'
