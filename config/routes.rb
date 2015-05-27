@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get :about
   end
 
-  get 'posts', as: 'user_root'
+  #get 'posts', as: 'user_root'
 
 
     # The priority is based upon order of creation: first created -> highest priority.
