@@ -34,5 +34,16 @@ feature 'Managing blog posts' do
 
       expect(page).to have_content 'This post was made from the Admin Interface'
     end
+
+    scenario 'Publishing an existing blog' do
+      visit admin_post_path(@post)
+      click_link 'Edit Post'
+
+      check 'Published'
+      click_button 'Update Post'
+
+      expect(page).to have_content 'Post was successfully updated'
+      expect(Post.last.published?).to be true
+    end
   end
 end
