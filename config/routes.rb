@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: [:create]
   end
-  controller :main do
-    get :about
-  end
+
+  get '/about' => 'pages#about'
 
   #get 'posts', as: 'user_root'
 
