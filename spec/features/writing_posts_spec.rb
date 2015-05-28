@@ -20,6 +20,7 @@ feature 'Writing blog posts' do
   scenario 'Writing a blog post in markdown' do
     click_link 'Posts'
     click_link 'New Post'
+    select('admin@example.com', from: 'Author')
 
     fill_in 'post_title', with: 'New Blog Post'
     fill_in 'post_body', with: "[Example.com link](http://example.com/)"
@@ -28,6 +29,7 @@ feature 'Writing blog posts' do
 
     visit post_path(Post.last)
 
-    expect(page).to have_link 'Example.com link'
+    assert page.should have_link 'Example.com link'
+    expect(page).to have_content 'Posted by: admin@example.com'
   end
 end

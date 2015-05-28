@@ -58,7 +58,7 @@ feature 'Managing blog posts' do
         click_button 'Update Post'
 
         expect(page).to have_content 'Post was successfully updated'
-        expect(Post.last.published?).to be_true
+        expect(Post.last.published?).to be_truthy
       end
     end
   end

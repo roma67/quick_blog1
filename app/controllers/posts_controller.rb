@@ -75,20 +75,20 @@ class PostsController < ApplicationController
   #   end
   # end
   #
-  # private
+  private
   #   # Use callbacks to share common setup or constraints between actions.
   #   def set_post
   #     @post = Post.find(params[:id])
   #   end
   #
   #   # Never trust parameters from the scary internet, only allow the white list through.
-  #   def post_params
-  #     params.require(:post).permit(:title, :body)
-  #   end
+     def post_params
+       params.require(:post).permit(:title, :body, :published, :author, :author_id)
+     end
   #
   # def authenticate
   #   authenticate_or_request_with_http_basic do |name, password|
   #     name == "admin" && password == "secret"
   #   end
-  # end
+  #end
 end
